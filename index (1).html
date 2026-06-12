@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saravanan Shanmuga Rajan — Learning Experience Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --ocean:#0F2C59;
+  --ocean-light:#1a3d78;
+  --ocean-dark:#091e3e;
+  --gold:#FFC107;
+  --gold-light:#FFD54F;
+  --gold-pale:#FFF8E1;
+  --coral:#FF6F61;
+  --coral-dark:#e55a4d;
+  --beige:#F3EEEA;
+  --beige-dark:#E8E0D8;
+  --white:#FFFFFF;
+  --text-on-ocean:#E8EEF7;
+  --text-muted-ocean:rgba(232,238,247,0.65);
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--beige);
+  color:var(--ocean);
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ─── NAV ─── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--ocean);
+  padding:0 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+  box-shadow:0 2px 24px rgba(15,44,89,0.18);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--white);text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--text-muted-ocean);
+  text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{
+  background:var(--coral);color:var(--white);
+  padding:9px 22px;border-radius:6px;
+  font-size:13px;font-weight:600;text-decoration:none;
+  letter-spacing:0.02em;
+  transition:background 0.2s,transform 0.15s;
+}
+.nav-cta:hover{background:var(--coral-dark);transform:translateY(-1px);}
+
+/* ─── HERO ─── */
+.hero{
+  background:var(--ocean);
+  min-height:90vh;
+  display:flex;align-items:center;
+  padding:5rem 3rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-200px;right:-200px;
+  width:700px;height:700px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,193,7,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:-150px;left:-100px;
+  width:500px;height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,111,97,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 380px;
+  gap:4rem;align-items:center;
+  position:relative;z-index:1;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,193,7,0.12);
+  border:1px solid rgba(255,193,7,0.3);
+  color:var(--gold);
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:7px 16px;border-radius:100px;
+  margin-bottom:1.5rem;
+}
+.hero-eyebrow-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+  animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,5.5vw,4rem);
+  font-weight:900;line-height:1.1;
+  color:var(--white);
+  letter-spacing:-0.03em;
+  margin-bottom:1.5rem;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-sub{
+  font-size:17px;font-weight:300;
+  color:var(--text-muted-ocean);
+  max-width:540px;line-height:1.8;
+  margin-bottom:2.5rem;
+}
+.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-coral{
+  background:var(--coral);color:var(--white);
+  padding:14px 32px;border-radius:8px;
+  text-decoration:none;font-size:15px;font-weight:600;
+  transition:background 0.2s,transform 0.15s;
+  display:inline-block;
+}
+.btn-coral:hover{background:var(--coral-dark);transform:translateY(-2px);}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  padding:14px 32px;border-radius:8px;
+  text-decoration:none;font-size:15px;font-weight:500;
+  border:1.5px solid rgba(255,255,255,0.25);
+  transition:border-color 0.2s,transform 0.15s;
+  display:inline-block;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+/* hero card */
+.hero-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:2rem;
+  backdrop-filter:blur(10px);
+}
+.hero-avatar{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--coral) 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:700;color:var(--white);
+  margin-bottom:1.25rem;
+}
+.hero-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;color:var(--white);margin-bottom:4px;
+}
+.hero-card-role{font-size:13px;color:var(--text-muted-ocean);margin-bottom:1.5rem;}
+.hero-stat-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+  margin-bottom:1.5rem;
+}
+.hero-stat{
+  background:rgba(255,193,7,0.08);
+  border:1px solid rgba(255,193,7,0.15);
+  border-radius:10px;padding:1rem;text-align:center;
+}
+.hero-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:4px;
+}
+.hero-stat-lbl{font-size:11px;color:var(--text-muted-ocean);line-height:1.3;}
+.hero-awards{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:1.25rem;
+}
+.hero-award-item{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:10px;font-size:12px;
+  color:var(--text-muted-ocean);line-height:1.4;
+}
+.award-pip{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:5px;
+}
+
+/* ─── SECTION BASE ─── */
+section{padding:5.5rem 3rem;}
+.container{max-width:1100px;margin:0 auto;}
+.section-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:0.6rem;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:700;color:var(--ocean);
+  letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.2;
+}
+.section-desc{
+  font-size:16px;color:#4a6080;
+  max-width:580px;margin-bottom:3rem;line-height:1.75;
+}
+
+/* ─── METRICS ─── */
+.metrics-section{
+  background:var(--ocean);
+  padding:5rem 3rem;
+}
+.metrics-section .section-eyebrow{color:var(--gold);}
+.metrics-section .section-title{color:var(--white);}
+.metrics-section .section-desc{color:var(--text-muted-ocean);}
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1.25rem;
+}
+.metric-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;padding:1.75rem 1.5rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.metric-card:hover{border-color:rgba(255,193,7,0.4);transform:translateY(-3px);}
+.metric-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:8px;
+}
+.metric-lbl{font-size:14px;color:var(--white);font-weight:500;margin-bottom:4px;}
+.metric-ctx{font-size:12px;color:var(--text-muted-ocean);line-height:1.4;}
+
+/* ─── WHAT I DO ─── */
+.services-section{background:var(--white);}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;
+}
+.service-card{
+  background:var(--beige);
+  border:1px solid var(--beige-dark);
+  border-radius:16px;padding:2rem;
+  border-top:3px solid transparent;
+  transition:border-top-color 0.2s,transform 0.2s,box-shadow 0.2s;
+}
+.service-card:hover{
+  border-top-color:var(--coral);
+  transform:translateY(-3px);
+  box-shadow:0 12px 32px rgba(15,44,89,0.1);
+}
+.service-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--ocean);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:1.25rem;
+}
+.service-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;
+  color:var(--ocean);margin-bottom:0.6rem;
+}
+.service-card p{font-size:14px;color:#4a6080;line-height:1.7;}
+
+/* ─── CASE STUDIES ─── */
+.cases-section{background:var(--beige);}
+.cases-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+.case-card{
+  background:var(--white);
+  border:1px solid var(--beige-dark);
+  border-radius:16px;overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,44,89,0.12);}
+.case-thumb{
+  height:140px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:44px;
+  position:relative;overflow:hidden;
+}
+.case-thumb-1{background:linear-gradient(135deg,#0F2C59 0%,#1a3d78 100%);}
+.case-thumb-2{background:linear-gradient(135deg,#1a5c3a 0%,#2d8a5a 100%);}
+.case-thumb-3{background:linear-gradient(135deg,#7c2d12 0%,#b45309 100%);}
+.case-thumb-4{background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 100%);}
+.case-body{padding:1.5rem;}
+.case-tag{
+  display:inline-block;
+  background:var(--gold-pale);color:#92660a;
+  font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;margin-bottom:0.75rem;
+}
+.case-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;
+  color:var(--ocean);margin-bottom:0.5rem;
+}
+.case-card p{font-size:13px;color:#4a6080;line-height:1.6;margin-bottom:1rem;}
+.case-result{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;color:var(--coral);
+}
+.case-result-bar{
+  width:4px;height:4px;border-radius:50%;background:var(--coral);flex-shrink:0;
+}
+
+/* ─── EXPERIENCE ─── */
+.experience-section{background:var(--white);}
+.timeline{margin-top:2.5rem;position:relative;padding-left:2rem;}
+.timeline::before{
+  content:'';position:absolute;left:10px;top:8px;bottom:8px;
+  width:2px;background:var(--beige-dark);
+}
+.tl-item{
+  margin-bottom:3rem;position:relative;
+}
+.tl-dot{
+  position:absolute;left:-2rem;top:6px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--ocean);border:3px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;
+}
+.tl-body{padding-left:0.5rem;}
+.tl-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+.tl-company{
+  font-size:12px;font-weight:600;
+  background:var(--ocean);color:var(--gold);
+  padding:3px 12px;border-radius:100px;
+}
+.tl-period{font-size:12px;color:#7a93ae;}
+.tl-role{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;
+  color:var(--ocean);margin-bottom:0.75rem;
+}
+.tl-list{list-style:none;}
+.tl-list li{
+  font-size:14px;color:#4a6080;
+  padding:3px 0 3px 18px;position:relative;line-height:1.6;
+}
+.tl-list li::before{
+  content:'▸';position:absolute;left:0;
+  color:var(--coral);font-size:10px;top:5px;
+}
+
+/* ─── TOOLS ─── */
+.tools-section{background:var(--ocean);}
+.tools-section .section-eyebrow{color:var(--gold);}
+.tools-section .section-title{color:var(--white);}
+.tools-section .section-desc{color:var(--text-muted-ocean);}
+.tools-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.25rem;
+}
+.tools-group{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;padding:1.5rem;
+}
+.tools-group-label{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.tools-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.tool-chip{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text-on-ocean);
+  font-size:12px;padding:5px 13px;border-radius:100px;
+  transition:background 0.2s,border-color 0.2s;
+}
+.tool-chip:hover{background:rgba(255,193,7,0.12);border-color:rgba(255,193,7,0.3);}
+
+/* ─── AWARDS ─── */
+.awards-section{background:var(--beige);}
+.awards-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:1rem;
+}
+.award-card{
+  background:var(--white);
+  border:1px solid var(--beige-dark);
+  border-left:4px solid var(--gold);
+  border-radius:0 12px 12px 0;
+  padding:1.25rem 1.5rem;
+  display:flex;align-items:flex-start;gap:14px;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.award-card:hover{transform:translateX(3px);box-shadow:4px 4px 20px rgba(15,44,89,0.08);}
+.award-emoji{font-size:24px;flex-shrink:0;margin-top:2px;}
+.award-title{font-size:14px;font-weight:600;color:var(--ocean);margin-bottom:3px;}
+.award-org{font-size:12px;color:#7a93ae;}
+
+/* ─── CONTACT ─── */
+.contact-section{background:var(--ocean);padding:5.5rem 3rem;}
+.contact-section .section-eyebrow{color:var(--gold);}
+.contact-section .section-title{color:var(--white);}
+.contact-section .section-desc{color:var(--text-muted-ocean);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2rem;}
+.contact-list{display:flex;flex-direction:column;gap:1rem;}
+.contact-row{
+  display:flex;align-items:center;gap:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;padding:1rem 1.25rem;
+  transition:border-color 0.2s;
+}
+.contact-row:hover{border-color:rgba(255,193,7,0.35);}
+.contact-row-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(255,193,7,0.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.contact-row-label{font-size:11px;color:var(--text-muted-ocean);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;}
+.contact-row a,.contact-row span{font-size:14px;color:var(--white);text-decoration:none;}
+.contact-row a:hover{color:var(--gold);}
+.avail-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(100,200,120,0.1);
+  border:1px solid rgba(100,200,120,0.25);
+  color:#7dd4a0;
+  font-size:13px;font-weight:500;
+  padding:8px 18px;border-radius:100px;
+  margin-bottom:2rem;
+}
+.avail-dot{
+  width:7px;height:7px;border-radius:50%;background:#5ec98a;
+  animation:blink 2s infinite;
+}
+.contact-info-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;padding:2rem;
+}
+.info-section-label{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.lang-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.lang-row:last-child{border-bottom:none;}
+.lang-name{font-size:14px;color:var(--white);}
+.lang-level{
+  font-size:11px;font-weight:600;
+  padding:3px 10px;border-radius:100px;
+}
+.lang-fluent{background:rgba(100,200,120,0.15);color:#7dd4a0;}
+.lang-b1{background:rgba(255,193,7,0.15);color:var(--gold);}
+.lang-native{background:rgba(255,111,97,0.15);color:#ff9d94;}
+.edu-item{margin-bottom:1rem;}
+.edu-degree{font-size:14px;font-weight:500;color:var(--white);}
+.edu-place{font-size:13px;color:var(--text-muted-ocean);}
+.edu-year{font-size:12px;color:#5a7090;margin-top:2px;}
+
+/* ─── COMPANIES STRIP ─── */
+.companies-strip{
+  background:var(--white);
+  padding:2rem 3rem;
+  border-bottom:1px solid var(--beige-dark);
+}
+.companies-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+}
+.companies-label{font-size:12px;color:#7a93ae;font-weight:500;letter-spacing:0.04em;margin-right:0.5rem;}
+.company-pill{
+  background:var(--beige);border:1px solid var(--beige-dark);
+  color:var(--ocean);font-size:13px;font-weight:600;
+  padding:8px 18px;border-radius:100px;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--ocean-dark);
+  padding:1.5rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-name{
+  font-family:'Playfair Display',serif;
+  font-size:15px;font-weight:700;color:var(--white);
+}
+.footer-copy{font-size:12px;color:#4a6080;}
+.footer-links{display:flex;gap:1.25rem;}
+.footer-links a{font-size:12px;color:#4a6080;text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+
+/* ─── DIVIDER ─── */
+.divider{height:1px;background:var(--beige-dark);max-width:1100px;margin:0 auto;}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .hero{padding:4rem 1.5rem;}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem;}
+  section{padding:4rem 1.5rem;}
+  .contact-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .companies-strip{padding:2rem 1.5rem;}
+  footer{padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Saravanan <span>SR</span></a>
+  <ul class="nav-links">
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#work">What I Do</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:saravananshanmugarajan95@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding:0;">
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Learning &amp; Talent Development Expert
+      </div>
+      <h1>I design learning<br/>that <em>moves</em><br/>people forward.</h1>
+      <p class="hero-sub">
+        Partnering with global organisations to build capability programs, leadership initiatives, and blended learning journeys — across Verizon, Siemens, and Amazon.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#cases" class="btn-coral">View Case Studies</a>
+        <a href="https://drive.google.com/file/d/12TmLbEQ5HNp9LzZUST_chmAz9nlJo4kx/view?usp=drive_link" target="_blank" class="btn-ghost">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-avatar">SR</div>
+      <h3>Saravanan Shanmuga Rajan</h3>
+      <div class="hero-card-role">Hyderabad, India · Open to Relocate</div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num">7+</div>
+          <div class="hero-stat-lbl">Years of L&amp;D experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.8%</div>
+          <div class="hero-stat-lbl">Resolution rate uplift</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">€12K</div>
+          <div class="hero-stat-lbl">Budget saved at Siemens</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-lbl">Framework adoption</div>
+        </div>
+      </div>
+      <div class="hero-awards">
+        <div class="hero-award-item"><div class="award-pip"></div>Verizon Spotlight Award — Quality Improvement, 2025</div>
+        <div class="hero-award-item"><div class="award-pip"></div>Siemens Intrapreneurs Bootcamp Finalist, Berlin 2023</div>
+        <div class="hero-award-item"><div class="award-pip"></div>U.S. Dept. of State Exchange Program Scholar</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- COMPANIES -->
+<div class="companies-strip">
+  <div class="companies-inner">
+    <span class="companies-label">Worked with</span>
+    <span class="company-pill">Verizon</span>
+    <span class="company-pill">Siemens</span>
+    <span class="company-pill">Amazon</span>
+    <span class="company-pill">Hinduja Leyland Finance</span>
+    <span class="company-pill">Munster Technological University</span>
+  </div>
+</div>
+
+<!-- IMPACT METRICS -->
+<section id="impact" class="metrics-section">
+  <div class="container">
+    <p class="section-eyebrow">Measurable impact</p>
+    <h2 class="section-title">Numbers that prove the difference</h2>
+    <p class="section-desc" style="color:var(--text-muted-ocean);">Every learning initiative I lead is tied to a business outcome. Here is what that looks like in practice.</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-num">4.8%</div>
+        <div class="metric-lbl">Resolution rate increase</div>
+        <div class="metric-ctx">Verizon customer-facing roles after training intervention</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">115</div>
+        <div class="metric-lbl">Responses in impact study</div>
+        <div class="metric-ctx">Level 3 behaviour evaluation over a 60-day follow-up period</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">100%</div>
+        <div class="metric-lbl">Framework adoption</div>
+        <div class="metric-ctx">Urgent–Important Matrix deployed across the Verizon team</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">€12K</div>
+        <div class="metric-lbl">Software budget saved</div>
+        <div class="metric-ctx">Siemens licence audit and rationalisation initiative</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">15+</div>
+        <div class="metric-lbl">Associates trained</div>
+        <div class="metric-ctx">Amazon — earned Star Performer recognition in 2020</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">3</div>
+        <div class="metric-lbl">Languages spoken</div>
+        <div class="metric-ctx">English (fluent) · German (B1) · Tamil (native)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="work" class="services-section">
+  <div class="container">
+    <p class="section-eyebrow">What I do</p>
+    <h2 class="section-title">How I help organisations grow</h2>
+    <p class="section-desc">My work lives at the intersection of learning science, design thinking, and business strategy.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Learning Strategy &amp; Evaluation</h3>
+        <p>Aligning L&amp;D initiatives to business goals. Designing Kirkpatrick Level 3 &amp; 4 evaluations that prove — and continuously improve — training impact.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✏️</div>
+        <h3>Instructional Design &amp; LX</h3>
+        <p>Blended, digital, and experiential learning journeys grounded in adult learning principles — from onboarding programmes to leadership transformation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌍</div>
+        <h3>Global Capability Building</h3>
+        <p>Designing for multicultural contexts. Localising content across regions and facilitating cross-border design thinking workshops with senior leadership.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Leadership Development</h3>
+        <p>Building leadership pipelines and coaching frameworks. Serving as design lead on multi-designer initiatives with dotted-line people leadership.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data-Informed Learning</h3>
+        <p>Using Power Automate, Power Query, and LMS analytics to surface insights that sharpen learning effectiveness and guide investment decisions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Design Thinking Facilitation</h3>
+        <p>Facilitating workshops with Verizon and Siemens leadership to co-create transformation programmes, new coaching frameworks, and innovative learning solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" class="cases-section">
+  <div class="container">
+    <p class="section-eyebrow">Portfolio</p>
+    <h2 class="section-title">Case studies</h2>
+    <p class="section-desc">End-to-end learning challenges — the problem, the design process, and the measurable outcome.</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-thumb case-thumb-1">📈</div>
+        <div class="case-body">
+          <span class="case-tag">Leadership · Strategy</span>
+          <h3>Importance of Business Agility</h3>
+          <p>Co-created a transformation learning initiative for Verizon Inside Sales teams through facilitated design thinking workshops with senior leadership in 2024.</p>
+          <div class="case-result"><div class="case-result-bar"></div>Facilitated with Verizon leadership</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-thumb case-thumb-2">🏥</div>
+        <div class="case-body">
+          <span class="case-tag">Compliance · Wellbeing</span>
+          <h3>Health &amp; Hygiene at Office</h3>
+          <p>Built an engaging compliance learning experience that went beyond box-ticking to drive genuine behavioural change across the organisation.</p>
+          <div class="case-result"><div class="case-result-bar"></div>Sustained behaviour change achieved</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-thumb case-thumb-3">📖</div>
+        <div class="case-body">
+          <span class="case-tag">Soft Skills · Communication</span>
+          <h3>The Art of Storytelling</h3>
+          <p>An experiential programme helping professionals communicate complex ideas through compelling narratives — scenario-based and learner-led.</p>
+          <div class="case-result"><div class="case-result-bar"></div>Scenario-based, high engagement</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-thumb case-thumb-4">⚡</div>
+        <div class="case-body">
+          <span class="case-tag">Productivity · Performance</span>
+          <h3>Bookmark in Chrome</h3>
+          <p>A microlearning piece on digital productivity tools — quick, practical, and immediately applicable for employees navigating complex digital workflows.</p>
+          <div class="case-result"><div class="case-result-bar"></div>Microlearning · Immediate application</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://sites.google.com/view/saravananrajan/case-studies" target="_blank" class="btn-coral">View All Case Studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience-section">
+  <div class="container">
+    <p class="section-eyebrow">Experience</p>
+    <h2 class="section-title">Career timeline</h2>
+    <p class="section-desc">Seven years of progressively complex roles across tech, manufacturing, finance, and education.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-top">
+            <span class="tl-company">Verizon</span>
+            <span class="tl-period">2024 – Present</span>
+          </div>
+          <div class="tl-role">Instructional Designer – Consultant</div>
+          <ul class="tl-list">
+            <li>Led strategic ID initiatives aligned to Verizon business priorities, accelerating proficiency in complex customer-facing roles</li>
+            <li>Conducted Level 3 behaviour evaluation — 115 valid responses, 60-day impact study confirming on-the-job application</li>
+            <li>Drove 4.8% increase in resolution rates alongside improvements in productivity and customer survey scores</li>
+            <li>Designed and implemented the Urgent–Important Matrix achieving 100% adoption across the team</li>
+            <li>Facilitated design thinking workshops with Verizon leadership to co-create transformation learning (2024, 2026)</li>
+            <li>Served as project and design lead for multi-designer initiatives with dotted-line leadership responsibility</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-top">
+            <span class="tl-company">Siemens</span>
+            <span class="tl-period">2022 – 2024</span>
+          </div>
+          <div class="tl-role">Learning Professional</div>
+          <ul class="tl-list">
+            <li>Partnered with business leaders on capability transformation using 3D Vista &amp; Storyline for international teams</li>
+            <li>Monitored the learning software budget — rationalised licences and saved €12,000</li>
+            <li>Facilitated design thinking workshops at the Siemens Learning Summit</li>
+            <li>Finalist at Siemens Intrapreneurs Bootcamp, Berlin 2023 — business idea to reduce hiring time and attrition</li>
+            <li>Optimised LMS course catalogue and drove content localisation across regions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-top">
+            <span class="tl-company">Hinduja Leyland Finance</span>
+            <span class="tl-period">2022</span>
+          </div>
+          <div class="tl-role">HR Executive</div>
+          <ul class="tl-list">
+            <li>Administered LMS and onboarding courses; created pathway documents for new employees</li>
+            <li>Managed end-to-end learning development and designed learning paths for entry-level associates</li>
+            <li>Conducted TNA and coordinated zonal training sessions across regions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-top">
+            <span class="tl-company">Amazon</span>
+            <span class="tl-period">2018 – 2022</span>
+          </div>
+          <div class="tl-role">Machine Learning Data Associate</div>
+          <ul class="tl-list">
+            <li>Managed data sets for Alexa AI and enhanced learning algorithms via performance analytics</li>
+            <li>Created training materials and trained 15+ associates — Star Performer recognition in 2020</li>
+            <li>Led new process training cycles and implemented continuous feedback and calibration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="tools-section">
+  <div class="container">
+    <p class="section-eyebrow">Tools &amp; Technology</p>
+    <h2 class="section-title">My toolkit</h2>
+    <p class="section-desc" style="color:var(--text-muted-ocean);">I work across the full stack of modern L&amp;D tools — from authoring and animation to analytics and AI.</p>
+    <div class="tools-grid">
+      <div class="tools-group">
+        <div class="tools-group-label">Learning Design</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Storyline 360</span>
+          <span class="tool-chip">Powtoon</span>
+          <span class="tool-chip">Vyond</span>
+          <span class="tool-chip">3D Vista</span>
+          <span class="tool-chip">Canva</span>
+          <span class="tool-chip">Figma</span>
+          <span class="tool-chip">SAP EnableNow</span>
+        </div>
+      </div>
+      <div class="tools-group">
+        <div class="tools-group-label">LMS Platforms</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Moodle</span>
+          <span class="tool-chip">Cornerstone</span>
+          <span class="tool-chip">Canvas</span>
+          <span class="tool-chip">Bridge</span>
+          <span class="tool-chip">Workday LMS</span>
+        </div>
+      </div>
+      <div class="tools-group">
+        <div class="tools-group-label">Data &amp; Reporting</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Power Automate</span>
+          <span class="tool-chip">Power Query</span>
+          <span class="tool-chip">MS Lists</span>
+          <span class="tool-chip">ChatGPT</span>
+        </div>
+      </div>
+      <div class="tools-group">
+        <div class="tools-group-label">Media &amp; AI</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Illustrator</span>
+          <span class="tool-chip">After Effects</span>
+          <span class="tool-chip">Synthesia</span>
+          <span class="tool-chip">Murf AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section">
+  <div class="container">
+    <p class="section-eyebrow">Recognition</p>
+    <h2 class="section-title">Awards &amp; achievements</h2>
+    <p class="section-desc">A track record of going above and beyond — recognised across every organisation I have worked with.</p>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-emoji">🏆</div>
+        <div>
+          <div class="award-title">Spotlight Award — Quality Improvement</div>
+          <div class="award-org">Verizon · 2025</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">⭐</div>
+        <div>
+          <div class="award-title">Spotlight Award — Personal Commitment &amp; Excellence</div>
+          <div class="award-org">Verizon · Q1 2025</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">🚀</div>
+        <div>
+          <div class="award-title">Rising Star Award</div>
+          <div class="award-org">Siemens · 2023</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">🌍</div>
+        <div>
+          <div class="award-title">Intrapreneurs Bootcamp Finalist</div>
+          <div class="award-org">Siemens · Berlin, Germany 2023</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">✨</div>
+        <div>
+          <div class="award-title">Star Performer</div>
+          <div class="award-org">Amazon · 2020</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">🤝</div>
+        <div>
+          <div class="award-title">Best Volunteer — South Region</div>
+          <div class="award-org">AFS Intercultural Programs India · 2019</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-emoji">🇺🇸</div>
+        <div>
+          <div class="award-title">High School Exchange Program Award</div>
+          <div class="award-org">U.S. Department of State · 2012</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <p class="section-eyebrow">Let's connect</p>
+    <h2 class="section-title">Open to new opportunities</h2>
+    <p class="section-desc">Whether you need a learning strategist, instructional designer, or a thought partner for your next capability challenge — I'd love to hear from you.</p>
+    <div class="avail-badge">
+      <div class="avail-dot"></div>
+      Available · Open to relocate from Hyderabad
+    </div>
+    <div class="contact-layout">
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="contact-row-icon">✉️</div>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <a href="mailto:saravananshanmugarajan95@gmail.com">saravananshanmugarajan95@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">📞</div>
+          <div>
+            <div class="contact-row-label">Phone</div>
+            <a href="tel:+919710642995">+91-9710642995</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">💼</div>
+          <div>
+            <div class="contact-row-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/saravanan-rajan/" target="_blank" rel="noopener">linkedin.com/in/saravanan-rajan</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">🔗</div>
+          <div>
+            <div class="contact-row-label">Bento</div>
+            <a href="https://bento.me/saravanan-rajan" target="_blank" rel="noopener">bento.me/saravanan-rajan</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-icon">📷</div>
+          <div>
+            <div class="contact-row-label">Instagram</div>
+            <a href="https://www.instagram.com/english.teach.workshop/" target="_blank" rel="noopener">@english.teach.workshop</a>
+          </div>
+        </div>
+        <div style="margin-top:1rem;">
+          <a href="https://drive.google.com/file/d/12TmLbEQ5HNp9LzZUST_chmAz9nlJo4kx/view?usp=drive_link" target="_blank" class="btn-coral" style="display:inline-block;">Download Resume →</a>
+        </div>
+      </div>
+      <div class="contact-info-box">
+        <div class="info-section-label">Languages</div>
+        <div class="lang-row">
+          <span class="lang-name">English</span>
+          <span class="lang-level lang-fluent">Fluent</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">German</span>
+          <span class="lang-level lang-b1">B1</span>
+        </div>
+        <div class="lang-row" style="margin-bottom:1.5rem;">
+          <span class="lang-name">Tamil</span>
+          <span class="lang-level lang-native">Native</span>
+        </div>
+        <div class="info-section-label" style="margin-top:1.5rem;">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">Masters</div>
+          <div class="edu-place">Munster Technological University</div>
+          <div class="edu-year">2026 – 2027</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelors</div>
+          <div class="edu-place">Anna University</div>
+          <div class="edu-year">2014 – 2018</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Saravanan Shanmuga Rajan</span>
+  <span class="footer-copy">© 2026 · Learning Experience Expert &amp; Instructional Designer</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/saravanan-rajan/" target="_blank">LinkedIn</a>
+    <a href="https://bento.me/saravanan-rajan" target="_blank">Bento</a>
+    <a href="mailto:saravananshanmugarajan95@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
